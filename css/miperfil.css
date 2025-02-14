@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@400;700&display=swap');
+body {
+    font-family: 'Montagu Slab', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.container {
+    display: grid;
+    grid-template-areas: 
+        " header"
+        " contenido"
+        " footer";
+    grid-template-columns:1fr;
+    grid-template-rows: 90px auto 125px; 
+    width: 100%;
+}
+
+/* Estilo para el header */
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+}
+
+.logo img {
+    width: 175px;
+    height: auto;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.menu ul li {
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.perfil-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 150px;
+    height: 100%; /* Ajustado para mejor proporción */
+    background: #000; /* Fondo negro */
+    border-left: 1px solid #63c50e; /* Borde blanco */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin-right: 30px;
+}
+
+
+.usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.usuario img{
+    width: 40px;
+    height: 40px;
+}
+
+.dinero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-left: 16px;
+    color:#FFD700 ;
+}
+
+.dinero img {
+    width: 25px;
+    height: 25px;
+}
+/* Importar fuente */
+
+
+/* Estilo para el header */
+
+
+/* Contenido principal */
+.contenido {
+    grid-area: contenido;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.perfil-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(3, 7, 1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #64C80D;
+    box-shadow: #63c50e 0px 0px 5px 0px;
+    width: 40%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.perfil{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: -20px;
+}
+.perfil a{
+    text-decoration: none;
+    color: #64C80D;
+    font-size: 16px;
+    margin-top: -15px;
+}
+.perfil-card:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.datos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+    width: 100%;
+    color: #ffffff;
+    text-align: left;
+    margin-left: 100px;
+}
+.datos p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.datos span {
+    font-weight: bold;
+    color: #64C80D;
+
+}
+
+
+
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+/* Contenedor del logo y copyright */
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 150px;
+    height: auto;
+}
+
+
+.footer-logo p {
+    margin-top: -10px;
+    color: white;
+    font-size: 12px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background-color: #47860f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.social-icons a i {
+    color: white;
+    font-size: 20px;
+}
+
+/* Lista de enlaces */
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
