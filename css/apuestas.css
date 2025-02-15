@@ -421,7 +421,7 @@ footer {
 
 @media (max-width: 768px) {
     .menu-lateral {
-        display: none; 
+        display: none; /* Asegúrate de ocultar el menú lateral también en pantallas más pequeñas */
     }
 
     .logo img {
