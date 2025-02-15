@@ -179,5 +179,15 @@
             
         </footer>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const perfilUsuario = document.querySelector(".perfil-usuario");
+            if (perfilUsuario) {
+                perfilUsuario.addEventListener("click", function() {
+                    window.location.href = "miperfil.html";
+                });
+            }
+        });
+    </script>
 </body>
 </html>
