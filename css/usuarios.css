@@ -1,10 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@400;700&display=swap');
+:root {
+    --color-primario: #64C80D;
+    --color-secundario: #000000;
+    --color-texto: white;
+    --color-hover: #569F0A;
+    --fondo-degradado: linear-gradient(to bottom, #366A08, #000000);
+    --padding-general: 10px;
+    --border-radius: 12px;
+    --font-size-normal: 14px;
+    --font-size-large: 44px;
+    --font-weight-bold: bold;
+    --font-family-main: 'Montagu Slab', sans-serif;
+    --font-family-secondary: Arial, sans-serif;
+    --logo-size: 140px;
+    --perfil-usuario-width: 150px;
+    --perfil-usuario-height: 100%;
+    --border-color: #64C80D;
+    --color-dinero: #FFD700;
+    --amigos-card-width: 175px;
+    --amigos-card-radius: 10px;
+    --amigos-card-hover-bg: rgba(0, 0, 0, 0.8);
+    --amigos-card-bg: rgba(0, 0, 0, 0.6);
+    --amigos-card-padding: 10px;
+    --amigos-card-img-size: 60px;
+    --button-bg-hover: #569F0A;
+}
+
 body {
-    font-family: 'Montagu Slab', sans-serif;
+    font-family: var(--font-family-main);
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #366A08, #000000);
-    color: white;
+    background: var(--fondo-degradado);
+    color: var(--color-texto);
     display: flex;
     justify-content: center;
 }
@@ -29,12 +55,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
-    padding: 10px;
+    background-color: var(--color-secundario);
+    padding: var(--padding-general);
 }
 
 .logo img {
-    width: 140px;
+    width: var(--logo-size);
     height: auto;
 }
 
@@ -49,10 +75,10 @@ header {
 }
 
 .menu ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
+    font-weight: var(--font-weight-bold);
+    padding: var(--padding-general);
 }
 
 .perfil-usuario {
@@ -60,28 +86,28 @@ header {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 150px;
-    height: 100%; /* Ajustado para mejor proporción */
-    background: #000; /* Fondo negro */
-    border-left: 1px solid #64C80D; /* Borde blanco */
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    width: var(--perfil-usuario-width);
+    height: var(--perfil-usuario-height);
+    background: var(--color-secundario);
+    border-left: 1px solid var(--border-color);
+    color: var(--color-texto);
+    font-family: var(--font-family-secondary);
     margin-right: 30px;
     cursor: pointer;
 }
-
 
 .usuario {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-bold);
     margin-top: 10px;
     margin-left: 10px;
 }
-.usuario img{
+
+.usuario img {
     width: 40px;
     height: 40px;
 }
@@ -90,10 +116,10 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     margin-top: -15px;
     margin-left: 16px;
-    color:#FFD700 ;
+    color: var(--color-dinero);
 }
 
 .dinero img {
@@ -101,15 +127,12 @@ header {
     height: 25px;
 }
 
-
-
 /* Menú lateral */
 .menu-lateral {
     grid-area: nav;
-    background-color: black;
+    background-color: var(--color-secundario);
     padding: 20px;
 }
-
 
 .menu-lateral ul {
     list-style: none;
@@ -120,22 +143,22 @@ header {
     margin-bottom: 15px;
     position: relative;
 }
+
 .menu-lateral ul li p {
-    color: #64C80D;
+    color: var(--color-primario);
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
 }
 
 .menu-lateral ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
 }
-
 
 .submenu-amigos li,
 .submenu-grupos li {
@@ -143,8 +166,8 @@ header {
     align-items: center;
     gap: 4px;
     margin-left: 20px;
-    color: white;
-    font-size: 14px;
+    color: var(--color-texto);
+    font-size: var(--font-size-normal);
     padding: 5px 0;
 }
 
@@ -153,10 +176,11 @@ header {
     height: 35px;
     border-radius: 100px;
 }
-.puntos{
-width: 15px;
-height: 15px;
-margin-left: 10px;
+
+.puntos {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
 }
 
 /* Contenido principal */
@@ -172,16 +196,17 @@ margin-left: 10px;
     align-items: center;
     justify-content: center;
     margin: 20px;
-    border-radius: 16px;
+    border-radius: var(--border-radius);
 }
+
 .contenido h1 {
-    
     width: 50%;
     text-align: center;
-    font-size: 44px;
-    font-weight: bold;
-    color: #ffffff;
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-texto);
 }
+
 .buscador {
     grid-area: buscador;
     display: flex;
@@ -202,74 +227,77 @@ margin-left: 10px;
     width: 90%;
     max-width: 1060px;
     padding: 15px;
-    border-radius: 16px;
+    border-radius: var(--border-radius);
     border: none;
     background-color: rgb(0, 0, 0);
     color: rgb(187, 181, 181);
-    font-size: 16px;
+    font-size: var(--font-size-normal);
 }
 
 .buscador input[type="text"]::placeholder {
     color: rgb(187, 181, 181);
 }
-.amigos-rec{
+
+.amigos-rec {
     display: flex;
     flex-direction: column;
     grid-area: amigos;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
+    justify-content: center;
     align-items: center;
 }
-.amigos-rec h3{
+
+.amigos-rec h3 {
     align-self: flex-start;
     font-size: 24px;
-    margin-left:16px;
+    margin-left: 16px;
 }
+
 /* Sección de Amigos */
 .amigos {
     padding: 20px;
-    border-radius: 16px;
+    border-radius: var(--border-radius);
     margin: 0 20px 20px 20px;
     display: flex;
-    flex-wrap: wrap; /* Las tarjetas se organizan en varias filas si es necesario */
-    gap: 20px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 /* Tarjetas de amigos */
 .amigos-card {
     display: flex;
-    flex-direction: column; /* Coloca los elementos dentro de la tarjeta de forma vertical */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    border-radius: 10px;
-    width: 175px; /* Controla el tamaño de las tarjetas */
+    background-color: var(--amigos-card-bg);
+    padding: var(--amigos-card-padding);
+    border-radius: var(--amigos-card-radius);
+    width: var(--amigos-card-width);
     transition: background-color 0.3s;
     box-sizing: border-box;
 }
 
 .amigos-card:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--amigos-card-hover-bg);
 }
 
 .amigos-card img {
-    width: 60px;
-    height: 60px;
+    width: var(--amigos-card-img-size);
+    height: var(--amigos-card-img-size);
     border-radius: 50%;
-    margin-bottom: 7px; /* Agregamos un margen para separar la imagen del texto */
+    margin-bottom: 7px;
 }
 
 .amigos-card p {
-    font-size: 16px;
+    font-size: var(--font-size-normal);
     margin-bottom: 10px;
-    color: white;
+    color: var(--color-texto);
 }
 
 .amigos-card form input {
-    background-color: #64C80D;
+    background-color: var(--color-primario);
     border: none;
-    color: white;
+    color: var(--color-texto);
     padding: 8px 20px;
     cursor: pointer;
     border-radius: 5px;
@@ -277,18 +305,18 @@ margin-left: 10px;
 }
 
 .amigos-card form input:hover {
-    background-color: #569F0A;
+    background-color: var(--button-bg-hover);
 }
 
 /* Footer */
 footer {
     grid-area: footer;
-    background-color: black;
+    background-color: var(--color-secundario);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 20px;
-    font-size: 14px;
+    font-size: var(--font-size-normal);
 }
 
 /* Contenedor del logo y copyright */
@@ -304,10 +332,9 @@ footer {
     height: auto;
 }
 
-
 .footer-logo p {
     margin-top: -10px;
-    color: white;
+    color: var(--color-texto);
     font-size: 12px;
 }
 
@@ -328,7 +355,7 @@ footer {
 }
 
 .social-icons a i {
-    color: white;
+    color: var(--color-texto);
     font-size: 20px;
 }
 
@@ -347,7 +374,7 @@ footer {
 }
 
 .footer-links ul li {
-    color: white;
-    font-size: 14px;
+    color: var(--color-texto);
+    font-size: var(--font-size-normal);
     cursor: pointer;
 }

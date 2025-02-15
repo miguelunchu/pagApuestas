@@ -1,9 +1,19 @@
 /* Estilos generales */
+:root {
+    --color-primario: #64C80D;
+    --color-secundario: #000000;
+    --color-texto: white;
+    --color-hover: #569F0A;
+    --fondo-degradado: linear-gradient(to bottom, #366A08, #000000);
+    --padding-general: 10px;
+    --border-radius: 12px;
+    --font-size-normal: 14px;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #366A08, #000000);
+    background: var(--fondo-degradado);
     color: white;
     display: flex;
     justify-content: center;
@@ -28,7 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: var(--color-secundario);
     padding: 10px;
     
     
@@ -50,7 +60,7 @@ header {
 }
 
 .menu ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
@@ -64,8 +74,8 @@ header {
     width: 150px;
     height: 100%; /* Ajustado para mejor proporción */
     background: #000; /* Fondo negro */
-    border-left: 1px solid #64C80D; /* Borde blanco */
-    color: #ffffff;
+    border-left: 1px solid var(--color-primario); /* Borde blanco */
+    color: var(--color-texto);
     font-family: Arial, sans-serif;
     margin-right: 30px;
     cursor: pointer;
@@ -107,7 +117,7 @@ header {
 /* Menú lateral */
 .menu-lateral {
     grid-area: nav;
-    background-color: black;
+    background-color: var(--color-secundario);
     padding: 20px;
 }
 
@@ -122,7 +132,7 @@ header {
 }
 
 .menu-lateral ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -134,7 +144,7 @@ header {
     align-items: center;
     gap: 4px;
     margin-left: 20px;
-    color: white;
+    color: var(--color-texto);
     font-size: 14px;
     padding: 5px 0;
 }
@@ -182,8 +192,8 @@ header {
     padding: 10px 60px 10px 5px ;
     border-radius: 12px;
     border: 1px solid #c2c2c2;
-    background: #000000;
-    color: #ffffff;
+    background: var(--color-secundario);
+    color: var(--color-texto);
     font-size: 16px;
     cursor: pointer;
     margin-right: 20px;
@@ -206,8 +216,8 @@ header {
 .tabla-ranking table {
     width: 100%;
     border-collapse: collapse;
-    background: #000000;
-    color: #ffffff;
+    background: var(--color-secundario);
+    color: var(--color-texto);
     overflow: hidden;
     
 }
@@ -215,7 +225,7 @@ header {
 /* Encabezado de tabla */
 .tabla-ranking thead {
     background: #463F3F;
-    color: #ffffff;
+    color: var(--color-texto);
     text-transform: uppercase;
 }
 
@@ -277,7 +287,7 @@ header {
     box-sizing: border-box;
     font-size: 14px;
     margin-right: 40px;
-    color: white;
+    color: var(--color-texto);
     font-weight: bold;
     transition: all 0.3s ease-in-out;
 }
@@ -301,7 +311,7 @@ header {
 }
 .unirse{
     background-color: #64C80D;
-    color: white;
+    color: var(--color-texto);
     border-radius: 16px;
     padding: 5px 20px;
     border: 2px solid #64C80D;
@@ -311,15 +321,15 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 .unirse:hover{
-    background: #064e0a;
+    background: var(--color-hover);
     transition: 0.3s;
 }
 .ver-apuesta{
-    background-color: #000000;
-    color: #64C80D;
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
     border-radius: 16px;
     padding: 5px 15px;
-    border: 2px solid #64C80D;
+    border: 2px solid var(--color-primario);
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
@@ -332,7 +342,7 @@ header {
 /* Footer */
 footer {
     grid-area: footer;
-    background-color: black;
+    background-color: var(--color-secundario);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -356,7 +366,7 @@ footer {
 
 .footer-logo p {
     margin-top: -10px;
-    color: white;
+    color: var(--color-texto);
     font-size: 12px;
 }
 
@@ -368,7 +378,7 @@ footer {
 .social-icons a {
     width: 40px;
     height: 40px;
-    background-color: #47860f;
+    background-color: var(--color-primario);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -377,7 +387,7 @@ footer {
 }
 
 .social-icons a i {
-    color: white;
+    color: var(--color-texto);
     font-size: 20px;
 }
 
@@ -396,7 +406,7 @@ footer {
 }
 
 .footer-links ul li {
-    color: white;
+    color: var(--color-texto);
     font-size: 14px;
     cursor: pointer;
 }
