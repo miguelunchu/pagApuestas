@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="./index.html"><img src="./img/image__1_-removebg-preview.png" alt="Logo"></a></div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="./usuarios.html">Usuarios</a></li>
+                    <li><a href="./apuesta.html">Apuestas</a></li>
+                    <li><a href="./rankings.html">Rankings</a></li>
+                </ul>
+            </nav>
+            <form action="#">
+                <input class="iniciar-sesion" type="button" value="Iniciar Sesión">
+                <input class="registrarse" type="button" value="Registrarse">
+            </form>
+        </header>
+
+        <nav class="menu-lateral">
+            <ul>
+                <li><a href="#">⚽ Fútbol</a>
+                <ul class="submenu">
+                    <li><img src="./img/icons8-emoji-inglaterra-48.png" alt="">Liga Inglesa</li>
+                    <li><img src="./img/icons8-emoji-españa-48.png" alt="">Liga Española</li>
+                    <li><img src="./img/icons8-italia-emoji-48.png" alt="">Liga Italiana</li>
+                </ul></li>
+                <li><a href="#">🏀 Baloncesto</a></li>
+                <li><a href="#">🎾 Tenis</a></li>
+            </ul>
+        </nav>
+
+        <main class="contenido">
+            <div class="img-container">
+                <p>Únete a la página de apuestas más interactiva y llévate un bono de bienvenida de 10€</p>
+                <form action="#">
+                    <input type="button" value="Unirme">
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-logo"><img src="./img/image__1_-removebg-preview.png" alt="">
+                <p>&copy; 2025 Apuestas Interactivas</p>
+            </div>
+            <div class="social-icons" >
+    
+                <a href="#">
+                    <i class='bx bxl-github'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-linkedin-square'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+        
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>
+                        Privacy Policy
+                    </li>
+                    <li>
+                        Terms of Use
+                    </li>
+                    <li>
+                        Sales and Refunds
+                    </li>
+                    <li>
+                        Legal
+                    </li>
+                </ul>
+            </div>
+            
+        </footer>
+    </div>
+    <script>
+        // Obtener los botones
+        const iniciarSesionBtn = document.querySelector('.iniciar-sesion');
+        const registrarseBtn = document.querySelector('.registrarse');
+    
+        // Añadir los eventos de clic a los botones
+        iniciarSesionBtn.addEventListener('click', () => {
+            // Redirigir a la página de iniciar sesión
+            window.location.href = './iniciar-sesion.html'; // Cambia esto a la URL correcta
+        });
+    
+        registrarseBtn.addEventListener('click', () => {
+            // Redirigir a la página de registrarse
+            window.location.href = './registrarse.html'; // Cambia esto a la URL correcta
+        });
+    </script>
+</body>
+</html>

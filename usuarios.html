@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/usuarios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="./index.html"><img src="./img/image__1_-removebg-preview.png" alt="Logo"></a></div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Usuarios</a></li>
+                    <li><a href="./apuesta.html">Apuestas</a></li>
+                    <li><a href="./rankings.html">Rankings</a></li>
+                </ul>
+            </nav>
+           <div class="perfil-usuario">
+            <div class="usuario">
+            <img src="./img/usuarioImg.png" alt="">
+            <p>miguelunchu</p>
+        </div>
+        <div class="dinero">
+            <img src="./img/image-removebg-preview (5).png" alt="">
+            <p>100.00 €</p>
+        </div>
+        </div>
+        </header>
+
+        <nav class="menu-lateral">
+            <ul>
+                <li>
+                    <p>Amigos</p>
+                    <ul class="submenu-amigos">
+                <li>
+                    <img class="perfil" src="./img/perfil.jpg" alt="">
+                    Jxaimex
+                    <img class="puntos" src="./img/icons8-tres-puntos-50.png" alt="">
+                </li>
+                <li>
+                    <img class="perfil" src="./img/perfil.jpg" alt="">
+                    Alex_22
+                    <img class="puntos"src="./img/icons8-tres-puntos-50.png" alt="">
+                </li>
+                <li>
+                    <img class="perfil" src="./img/perfil.jpg" alt="">
+                    Rodrigox
+                    <img class="puntos" src="./img/icons8-tres-puntos-50.png" alt="">
+                </li>
+            </ul>
+            </li>
+            <li>
+                <ul class="submenu-grupos">
+                <p>Grupos</p>
+                <li>
+                    <img class="perfil" src="./img/perfilgrupo.jpg" alt="">
+                    Vs2DAW
+                    <img class="puntos" src="./img/icons8-tres-puntos-50.png" alt="">
+                </li>
+                <li>
+                    <img class="perfil" src="./img/perfilgrupo.jpg" alt="">
+                    Butaneros 
+                    <img class="puntos" src="./img/icons8-tres-puntos-50.png" alt="">
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </nav>
+
+        <main class="contenido">
+            <h1>
+                Disfruta y Compite con tus amigos con las mejores Apuestas
+            </h1>
+
+        </main>
+        <section class="buscador">
+            <form action="#">
+                <input type="text" placeholder="Buscar">
+            </form>
+
+        </section>
+
+        <section class="amigos-rec">
+            <h3>Personas que quizas conozcas</h3>
+            <div class="amigos">
+            <div class="amigos-card">
+                <img src="./img/perfil.jpg" alt="">
+                <p>Iker Herrero</p>
+                <form action="#">
+                    <input type="button" value="Seguir">
+                </form>
+            </div>
+            <div class="amigos-card">
+                <img src="./img/perfil.jpg" alt="">
+                <p>Iker Herrero</p>
+                <form action="#">
+                    <input type="button" value="Seguir">
+                </form>
+            </div>
+            <div class="amigos-card">
+                <img src="./img/perfil.jpg" alt="">
+                <p>Iker Herrero</p>
+                <form action="#">
+                    <input type="button" value="Seguir">
+                </form>
+            </div>
+            <div class="amigos-card">
+                <img src="./img/perfil.jpg" alt="">
+                <p>Iker Herrero</p>
+                <form action="#">
+                    <input type="button" value="Seguir">
+                </form>
+            </div>
+            <div class="amigos-card">
+                <img src="./img/perfil.jpg" alt="">
+                <p>Iker Herrero</p>
+                <form action="#">
+                    <input type="button" value="Seguir">
+                </form>
+            </div>
+        </div>
+        </section>
+
+        <footer>
+            <div class="footer-logo"><img src="./img/image__1_-removebg-preview.png" alt="">
+                <p>&copy; 2025 Apuestas Interactivas</p>
+            </div>
+            <div class="social-icons" >
+    
+                <a href="#">
+                    <i class='bx bxl-github'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-linkedin-square'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+        
+                <a href="#">
+                    <i class='bx bxl-twitter'></i>
+                </a>
+        
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li>
+                        Privacy Policy
+                    </li>
+                    <li>
+                        Terms of Use
+                    </li>
+                    <li>
+                        Sales and Refunds
+                    </li>
+                    <li>
+                        Legal
+                    </li>
+                </ul>
+            </div>
+            
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const perfilUsuario = document.querySelector(".perfil-usuario");
+            if (perfilUsuario) {
+                perfilUsuario.addEventListener("click", function() {
+                    window.location.href = "miperfil.html";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
