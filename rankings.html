@@ -18,10 +18,16 @@
                     <li><a href="./rankings.html">Rankings</a></li>
                 </ul>
             </nav>
-            <form action="#">
-                <input class="iniciar-sesion" type="button" value="Iniciar Sesión">
-                <input class="registrarse" type="button" value="Registrarse">
-            </form>
+            <div class="perfil-usuario">
+                <div class="usuario">
+                <img src="./img/usuarioImg.png" alt="">
+                <p>miguelunchu</p>
+            </div>
+            <div class="dinero">
+                <img src="./img/image-removebg-preview (5).png" alt="">
+                <p>100.00 €</p>
+            </div>
+            </div>
         </header>
 
         <nav class="menu-lateral">
@@ -39,6 +45,7 @@
 
         <main class="contenido">
             <h1>Rankings</h1>
+            <div class="tabla-div">
         <div class="ranking-select">
             <select name="" id="">
                 <option value="">Ranking Amigos</option>
@@ -95,6 +102,7 @@
                 </tbody>
             </table>
          </div>
+        </div>
         </main>
         <section class="desafios">
             <h2>Unete a tus amigos y superalos en el ranking</h2>
@@ -171,5 +179,15 @@
             
         </footer>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const perfilUsuario = document.querySelector(".perfil-usuario");
+            if (perfilUsuario) {
+                perfilUsuario.addEventListener("click", function() {
+                    window.location.href = "miperfil.html";
+                });
+            }
+        });
+    </script>
 </body>
 </html>

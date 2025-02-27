@@ -1,11 +1,20 @@
 
-/* Estilos generales */
+:root {
+    --color-primario: #64C80D;
+    --color-secundario: #000000;
+    --color-texto: white;
+    --color-hover: #569F0A;
+    --fondo-degradado: linear-gradient(to bottom, #366A08, #000000);
+    --padding-general: 10px;
+    --border-radius: 12px;
+    --font-size-normal: 14px;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #366A08, #000000);
-    color: white;
+    background: var(--fondo-degradado);
+    color: var(--color-texto);
     display: flex;
     justify-content: center;
 }
@@ -28,7 +37,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: var(--color-secundario);
     padding: 10px;
     
     
@@ -50,56 +59,63 @@ header {
 }
 
 .menu ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
 }
 
-header form {
+.perfil-usuario {
     display: flex;
-    gap: 10px;
-    margin-right: 20px;
-}
-
-form input {
-    padding: 8px 15px;
-    border: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 150px;
+    height: 100%; /* Ajustado para mejor proporción */
+    background: var(--color-secundario); /* Fondo negro */
+    border-left: 1px solid var(--color-primario); /* Borde blanco */
+    color: var(--color-texto);
+    font-family: Arial, sans-serif;
+    margin-right: 30px;
     cursor: pointer;
-    border-radius: 5px;
 }
 
-.iniciar-sesion {
-    background-color: #64C80D;
-    color: rgb(0, 0, 0);
-    border-radius: 12px;
-    padding: 5px 15px;
+
+.usuario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
     font-weight: bold;
-    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.usuario img{
+    width: 40px;
+    height: 40px;
 }
 
-.iniciar-sesion:hover {
-    background-color: #569F0A;
+.dinero {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    margin-top: -15px;
+    margin-left: 16px;
+    color:#FFD700 ;
 }
 
-.registrarse {
-    background-color: black;
-    color: #64C80D;
-    padding: 5px 15px;
-    border: 2px solid #64C80D;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 14px;
+.dinero img {
+    width: 25px;
+    height: 25px;
 }
 
-.registrarse:hover {
-    background-color: #222;
-}
 
 /* Menú lateral */
 .menu-lateral {
     grid-area: nav;
-    background-color: black;
+    background-color: var(--color-secundario);
     padding: 20px;
 }
 
@@ -114,7 +130,7 @@ form input {
 }
 
 .menu-lateral ul li a {
-    color: white;
+    color: var(--color-texto);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -126,7 +142,7 @@ form input {
     align-items: center;
     gap: 4px;
     margin-left: 20px;
-    color: white;
+    color: var(--color-texto);
     font-size: 14px;
     padding: 5px 0;
 }
@@ -158,7 +174,7 @@ form input {
     text-align: center;
     font-size: 44px;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--color-texto);
 }
 .partidos {
     display: flex;
@@ -167,11 +183,10 @@ form input {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 400px;
+    height: auto;
     overflow-y: auto;
     box-sizing: border-box;
     font-weight: bold;
-    scrollbar-width: thin; /* Hace la barra más delgada (Firefox) */
     scrollbar-color: #4c7e2100 #22222200;
 }
 .partidos::-webkit-scrollbar {
@@ -263,7 +278,7 @@ form input {
 }
 
 .apostar input {
-    background-color: #64C80D;
+    background-color: var(--color-primario);
     color: white;
     padding: 5px 15px; /* Reducción de tamaño del botón */
     border: none;
@@ -276,13 +291,13 @@ form input {
 }
 
 .apostar input:hover {
-    background-color: #4FA60A;
+    background-color: var(--color-hover);
 }
 
 .apostar a {
     text-decoration: none;
     font-size: 16px; /* Reducción del tamaño de la fuente */
-    color: rgb(0, 0, 0);
+    color: var(--color-secundario);
     font-size: 32px;
 }
 
@@ -290,7 +305,7 @@ form input {
 /* Footer */
 footer {
     grid-area: footer;
-    background-color: black;
+    background-color: var(--color-secundario);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -314,7 +329,7 @@ footer {
 
 .footer-logo p {
     margin-top: -10px;
-    color: white;
+    color: var(--color-texto);
     font-size: 12px;
 }
 
@@ -326,7 +341,7 @@ footer {
 .social-icons a {
     width: 40px;
     height: 40px;
-    background-color: #47860f;
+    background-color: var(--color-hover);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -335,7 +350,7 @@ footer {
 }
 
 .social-icons a i {
-    color: white;
+    color: var(--color-texto);
     font-size: 20px;
 }
 
@@ -354,7 +369,7 @@ footer {
 }
 
 .footer-links ul li {
-    color: white;
+    color: var(--color-texto);
     font-size: 14px;
     cursor: pointer;
 }
