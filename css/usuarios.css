@@ -378,3 +378,263 @@ footer {
     font-size: var(--font-size-normal);
     cursor: pointer;
 }
+
+/* Modificar los estilos del menu-toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 30px;
+    color: var(--color-primario);
+}
+
+@media screen and (max-width: 768px) {
+    /* Ajuste del grid container */
+    .container {
+        grid-template-areas: 
+            "header"
+            "contenido"
+            "buscador"
+            "amigos"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        padding: 0;
+        height: auto;
+    }
+
+    /* Header más fino */
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 5px 15px;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    /* Mostrar botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
+
+    .logo {
+        text-align: center;
+        width: 100%;
+        order: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo img {
+        width: 90px;
+        height: auto;
+    }
+
+    /* Perfil de usuario */
+    .perfil-usuario {
+        position: absolute;
+        right: 10px;
+        height: fit-content;
+        top: 5px;
+        width: auto;
+        margin: 0;
+        border-left: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0;
+    }
+
+    .usuario {
+        margin: 0;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .usuario img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .dinero {
+        margin: 0;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .dinero img {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Menú superior */
+    header .menu {
+        order: 3;
+        width: 100%;
+        text-align: center;
+    }
+
+    header .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+
+    header .menu ul li {
+        margin: 0;
+    }
+
+    header .menu ul li a {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    /* Menú lateral */
+    .menu-lateral {
+        display: none; /* Oculto por defecto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 200px;
+        background-color: var(--color-secundario);
+        z-index: 999;
+        padding: 15px;
+    }
+
+    /* Cuando está activo, se muestra */
+    .menu-lateral.active {
+        display: block;
+    }
+
+    /* Ajustes del menú lateral */
+    .menu-lateral ul li {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .menu-lateral ul li a,
+    .menu-lateral ul li p {
+        font-size: 14px;
+    }
+
+    .submenu-amigos li,
+    .submenu-grupos li {
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .perfil {
+        width: 30px;
+        height: 25px;
+    }
+
+    /* Contenido principal */
+    .contenido {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .contenido h1 {
+        width: 90%;
+        font-size: 32px;
+    }
+
+    /* Buscador */
+    .buscador {
+        padding: 10px;
+    }
+
+    .buscador input[type="text"] {
+        width: 85%;
+        padding: 12px;
+    }
+
+    /* Sección de amigos */
+    .amigos-rec {
+        padding: 10px;
+    }
+
+    .amigos-rec h3 {
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .amigos {
+        padding: 10px;
+        margin: 10px;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .amigos-card {
+        width: calc(50% - 20px);
+        min-width: 150px;
+        padding: 8px;
+    }
+
+    .amigos-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        padding: 25px 15px;
+    }
+
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+
+    .footer-logo img {
+        width: 120px;
+    }
+
+    .social-icons {
+        margin: 10px 0;
+    }
+
+    .footer-links ul {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footer-links ul li {
+        padding: 5px 0;
+    }
+}
+
+/* Media query para pantallas muy pequeñas */
+@media screen and (max-width: 375px) {
+    header {
+        padding: 8px;
+    }
+
+    .contenido h1 {
+        font-size: 28px;
+    }
+
+    .amigos-card {
+        width: 100%;
+    }
+
+    .footer-logo img {
+        width: 100px;
+    }
+}

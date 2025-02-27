@@ -10,6 +10,9 @@
 <body>
     <div class="container">
         <header>
+            <div class="menu-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
             <div class="logo"><a href="./index.html"><img src="./img/image__1_-removebg-preview.png" alt="Logo"></a></div>
             <nav class="menu">
                 <ul>
@@ -46,6 +49,27 @@
         <main class="contenido">
             <h1>Partidos destacados</h1>
             <div class="partidos">
+                <div class="card-partidos">
+                    <div class="horario">
+                    <img src="./img/icons8-reloj-24 (1).png" alt=""><p>Hoy 21:00</p>
+                </div>
+                <div class="equipo1">
+                    <img src="./img/Captura_de_pantalla_2025-02-03_160655-removebg-preview.png" alt="">
+                    <p>Manchester City</p>
+                </div>
+                <div class="equipo2">
+                    <img src="./img/image-removebg-preview (1).png" alt="">
+                    <p>Liverpool</p>
+                </div>
+                <div class="importe"><p>Importe 10€</p></div>
+                
+                <div class="apostar">
+                    <form action="#">
+                        <input type="button" value="Hacer Apuesta">
+                    </form>
+                    <a href="#">+</a>
+                </div>
+                </div>
                 <div class="card-partidos">
                     <div class="horario">
                     <img src="./img/icons8-reloj-24 (1).png" alt=""><p>Hoy 21:00</p>
@@ -343,15 +367,6 @@
             
         </footer>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const perfilUsuario = document.querySelector(".perfil-usuario");
-            if (perfilUsuario) {
-                perfilUsuario.addEventListener("click", function() {
-                    window.location.href = "miperfil.html";
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
