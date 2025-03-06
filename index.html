@@ -6,9 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="menu-toggle">
             <i class='bx bx-menu'></i>
         </div>
@@ -22,36 +23,42 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="ai-assistant">
-                    <button class="ai-toggle">
-                        <img src="./img/fotoia.png" alt="AI Assistant">
+                <div class="relative">
+                    <button id="chat-toggle" class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity">
+                        <img src="./img/fotoia.png" alt="AI Assistant" class="w-full h-full object-cover">
                     </button>
                     
-                    <div class="ai-chat-container">
-                        <div class="ai-chat-header">
-                            <div class="ai-avatar">
-                                <div class="ai-ball">
-                                    <div class="ai-ball-inner"></div>
-                                </div>
+                    <div id="chat-container" class="absolute right-0 mt-2 w-96 bg-gray-900 rounded-lg shadow-xl border border-gray-700 z-50 hidden">
+                        <!-- Header del Chat -->
+                        <div class="flex items-center p-4 border-b border-gray-700">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800">
+                                <div class="w-6 h-6 rounded-full bg-green-500 animate-pulse"></div>
                             </div>
-                            <h3>Asistente</h3>
-                            <button class="ai-close">
-                                <i class='bx bx-x'></i>
+                            <h3 class="ml-3 text-lg font-semibold text-white">Asistente</h3>
+                            <button id="chat-close" class="ml-auto text-gray-400 hover:text-white">
+                                <i class='bx bx-x text-2xl'></i>
                             </button>
                         </div>
                         
-                        <div class="ai-chat-messages">
-                            <p>Hola, ¿cómo puedo ayudarte hoy?</p>
+                        <!-- Mensajes -->
+                        <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-900">
+                            <p class="bg-gray-800 rounded-lg p-3 text-gray-200">Hola, ¿cómo puedo ayudarte hoy?</p>
                         </div>
                         
-                        <div class="ai-chat-input">
-                            <input type="text" placeholder="Pregúntame sobre apuestas...">
-                            <button class="ai-send">
-                                <i class='bx bx-send'></i>
-                            </button>
-                            <button class="ai-mic">
-                                <i class='bx bx-microphone'></i>
-                            </button>
+                        <!-- Input del Chat -->
+                        <div class="p-4 border-t border-gray-700 bg-gray-900">
+                            <div class="flex items-center space-x-3">
+                                <input type="text" 
+                                       id="chat-input"
+                                       placeholder="Pregúntame sobre apuestas..." 
+                                       class="flex-1 px-4 py-2 h-9 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-green-500">
+                                <button id="send-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors">
+                                    <i class='bx bx-send text-base'></i>
+                                </button>
+                                <button id="voice-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors">
+                                    <i class='bx bx-microphone text-base'></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

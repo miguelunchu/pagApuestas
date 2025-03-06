@@ -156,4 +156,57 @@ document.addEventListener("DOMContentLoaded", function() {
             }, 200);
         });
     }
+
+    // Código del chat
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatContainer = document.getElementById('chat-container');
+    const chatClose = document.getElementById('chat-close');
+    const chatInput = document.getElementById('chat-input');
+    const sendMessage = document.getElementById('send-message');
+    const chatMessages = document.getElementById('chat-messages');
+
+    if (chatToggle && chatContainer) {
+        // Función para alternar la visibilidad del chat
+        function toggleChat() {
+            chatContainer.classList.toggle('hidden');
+        }
+
+        // Abrir chat al hacer clic en el botón
+        chatToggle.addEventListener('click', toggleChat);
+
+        // Cerrar chat al hacer clic en la X
+        chatClose.addEventListener('click', toggleChat);
+
+        // Enviar mensaje al hacer clic en el botón o presionar Enter
+        function sendChatMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Añadir mensaje del usuario
+                const userMessage = document.createElement('p');
+                userMessage.className = 'bg-green-600 rounded-lg p-3 text-white mb-2 ml-auto max-w-[80%]';
+                userMessage.textContent = message;
+                chatMessages.appendChild(userMessage);
+
+                // Limpiar input
+                chatInput.value = '';
+                
+                // Scroll al último mensaje
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        sendMessage.addEventListener('click', sendChatMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+
+        // Cerrar chat al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!chatContainer.contains(e.target) && !chatToggle.contains(e.target) && !chatContainer.classList.contains('hidden')) {
+                chatContainer.classList.add('hidden');
+            }
+        });
+    }
 }); 

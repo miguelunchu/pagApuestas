@@ -18,7 +18,7 @@ body {
     justify-content: center;
 }
 
-.container {
+.main-container {
     display: grid;
     grid-template-areas: 
         "header header"
@@ -228,7 +228,6 @@ header {
     overflow-y: auto;
     box-sizing: border-box;
     font-weight: bold;
-    scrollbar-color: #4c7e2100 #22222200;
 }
 .partidos::-webkit-scrollbar {
     width: 8px; /* Ancho de la barra */
@@ -253,20 +252,15 @@ header {
     display: flex;
     flex-direction: column; 
     align-items: center;  
-    justify-content: center;
+    justify-content: space-between;
     margin: 15px;  
     background: linear-gradient(to bottom, #000000 54%, #366A08 100%);
-    padding: 5px;  
+    padding: 15px;  
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.15);
     width: 240px; 
-    height: 175px;  
-    transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: all 0.8s ease-out;
-    animation: slideFromBottom 0.8s ease-out;
-    animation-fill-mode: both;
+    height: 220px;
+    box-sizing: border-box;
 }
 
 .card-partidos:hover {
@@ -301,13 +295,14 @@ header {
 
 
 
-.horario{
+.horario {
     display: flex;
     flex-direction: row; 
-    align-items: center;  /* Centrado del horario */
+    align-items: center;
     justify-content: center;
-    margin-top: -5px;
+    margin-bottom: 8px;
     font-size: 12px;
+    width: 100%;
 }
 .horario img{
     width: 20px;
@@ -319,57 +314,77 @@ header {
 .equipo1, .equipo2 {
     display: flex;
     align-items: center; 
-    justify-content: flex-start; /* Alineación a la izquierda */
-    width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
-    margin-top: -15px; /* Reducción de margen */
-    margin-left: 75px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 4px 10px;
+    gap: 10px;
+    margin: 2px 0;
 }
 
 .equipo1 img, .equipo2 img {
-    width: 25px; /* Reducción del tamaño de las imágenes */
-    height: 25px; /* Reducción del tamaño de las imágenes */
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
 }
-.importe{
-    margin-top: -15px;
+.importe {
+    margin: 8px 0;
     color: #FFD700;
     font-size: 14px;
-    
-
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
 }
 
 /* Botón de apuesta */
 .apostar {
     display: flex;
     align-items: center;
-    justify-content: center;  /* Centrado del botón */
+    justify-content: space-between;
     width: 100%;
-    margin-top: -10px;
-     /* Reducción de margen */
+    gap: 10px;
+    padding: 0 8px;
+    margin-top: 8px;
+    box-sizing: border-box;
 }
 
 .apostar input {
     background-color: var(--color-primario);
-    color: white;
-    padding: 5px 15px; /* Reducción de tamaño del botón */
+    color: black;
+    padding: 8px 15px;
     border: none;
     border-radius: 16px;
     cursor: pointer;
     font-size: 12px;
-    color: #000;
     font-weight: bold;
-    margin-right: 10px; /* Reducción del tamaño de la fuente */
+    width: auto;
+    min-width: 120px;
+    transition: all 0.3s ease;
 }
 
 .apostar input:hover {
     background-color: var(--color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .apostar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 30px;
+    background-color: var(--color-primario);
+    border-radius: 50%;
     text-decoration: none;
-    font-size: 16px; /* Reducción del tamaño de la fuente */
-    color: var(--color-secundario);
-    font-size: 32px;
+    color: black;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.apostar a:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -457,7 +472,7 @@ footer {
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .main-container {
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"
@@ -466,79 +481,91 @@ footer {
     }
 
     .menu-lateral {
-        display: none; /* Oculta el menú lateral en pantallas más pequeñas */
+        display: none;
     }
 
     .logo img {
-        width: 120px;
-    }
-
-    .menu ul {
-        display: block;
-        text-align: center;
-    }
-
-    .menu ul li {
-        margin: 10px 0;
-    }
-
-    .contenido h1 {
-        width: 100%;
-        font-size: 32px;
-    }
-
-    .card-partidos {
-        width: 90%;
-        height: 200px;
-    }
-
-    footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-logo img {
         width: 120px;
     }
 }
 
 @media (max-width: 768px) {
-    .menu-lateral {
-        display: none; /* Asegúrate de ocultar el menú lateral también en pantallas más pequeñas */
+    header {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
     }
 
     .logo img {
         width: 100px;
     }
 
+    .header-actions {
+        margin-right: 10px;
+    }
+
+    .usuario img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .usuario p {
+        font-size: 12px;
+    }
+
+    .dinero img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .dinero p {
+        font-size: 12px;
+    }
+
+    .partidos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
     .card-partidos {
         width: 100%;
-        height: 180px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 8px;
     }
 
-    .contenido h1 {
-        font-size: 24px;
+    .logo img {
+        width: 80px;
     }
 
-    footer {
-        flex-direction: column;
-        text-align: center;
+    .partidos {
+        grid-template-columns: 1fr;
     }
 
-    .footer-logo img {
-        width: 100px;
+    .card-partidos {
+        margin: 5px 0;
     }
 }
 
 @media screen and (max-width: 768px) {
     /* Ajuste del grid container */
-    .container {
+    .main-container {
         grid-template-areas: 
             "header"
             "contenido"
             "footer";
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto 1fr auto;
         padding: 0;
         height: auto;
     }
@@ -547,8 +574,8 @@ footer {
     header {
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 5px 15px;
-        gap: 10px;
+        padding: 0;
+        gap: 0;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -574,6 +601,8 @@ footer {
     .logo img {
         width: 90px;
         height: auto;
+        padding: 0;
+        margin: 0;
     }
 
     /* Perfil de usuario */
@@ -588,19 +617,24 @@ footer {
         flex-direction: column;
         align-items: flex-end;
         gap: 0;
+        padding-left: 10px;
     }
 
     .usuario {
         margin: 0;
-        font-size: 11px;
+        font-size: 12px;
         display: flex;
         align-items: center;
         gap: 3px;
     }
 
     .usuario img {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .usuario p {
+        font-size: 12px;
     }
 
     .dinero {
@@ -612,8 +646,12 @@ footer {
     }
 
     .dinero img {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .dinero p {
+        font-size: 12px;
     }
 
     /* Menú superior */
@@ -621,34 +659,22 @@ footer {
         order: 3;
         width: 100%;
         text-align: center;
-        margin-top: 5px;
     }
 
     header .menu ul {
-        display: flex !important;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
         padding: 0;
-        margin: 0;
-        overflow-x: auto; /* Permite scroll horizontal si es necesario */
-        -webkit-overflow-scrolling: touch;
-    }
-
-    header .menu ul::-webkit-scrollbar {
-        display: none; /* Oculta la barra de scroll en webkit */
     }
 
     header .menu ul li {
         margin: 0;
-        white-space: nowrap;
     }
 
     header .menu ul li a {
         font-size: 13px;
         padding: 5px 10px;
-        display: inline-block;
     }
 
     /* Menú lateral */
@@ -664,26 +690,71 @@ footer {
         padding: 15px;
     }
 
+    /* Cuando está activo, se muestra */
     .menu-lateral.active {
         display: block;
     }
 
-    /* Ajustes específicos para apuestas */
-    .contenido {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    .contenido h1 {
-        width: 100%;
-        font-size: 24px;
-        text-align: center;
-        margin-bottom: 20px;
+    .partidos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
     }
 
     .card-partidos {
         width: 100%;
-        margin: 10px 0;
+        height: 160px;
+        padding: 10px;
+        margin: 5px;
+        box-sizing: border-box;
+    }
+
+    .horario {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .horario img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .equipo1, .equipo2 {
+        padding: 3px 8px;
+        font-size: 12px;
+        margin: 3px 0;
+    }
+
+    .equipo1 img, .equipo2 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .importe {
+        margin: 8px 0;
+        font-size: 12px;
+        padding-left: 8px;
+    }
+
+    .apostar {
+        display: none;
+    }
+
+    .contenido h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu ul {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .menu ul li a {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
 
@@ -717,155 +788,6 @@ footer {
     gap: 15px;
 }
 
-.ai-assistant {
-    position: relative;
-    margin-right: 5px;
-}
-
-.ai-toggle {
-    background: none;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    padding: 0;
-}
-
-.ai-toggle img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.ai-toggle:hover img {
-    transform: scale(1.1);
-}
-
-.ai-chat-container {
-    position: absolute;
-    top: 70px;
-    right: -150px; /* Ajustado para centrar respecto al botón */
-    width: 350px;
-    height: 500px;
-    background: rgba(0, 0, 0, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    transform: scale(0);
-    transform-origin: top right;
-    transition: transform 0.3s ease;
-    z-index: 1000;
-}
-
-.ai-chat-container.active {
-    transform: scale(1);
-}
-
-.ai-chat-header {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background: linear-gradient(135deg, #1a1a1a, #000000);
-    border-bottom: 2px solid #64C80D;
-}
-
-.ai-avatar {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-}
-
-.ai-ball {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #64C80D, #366A08);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: pulse 2s infinite;
-}
-
-.ai-ball-inner {
-    width: 60%;
-    height: 60%;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.ai-chat-header h3 {
-    color: white;
-    margin: 0;
-    flex-grow: 1;
-}
-
-.ai-close {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 24px;
-}
-
-.ai-chat-messages {
-    flex-grow: 1;
-    padding: 15px;
-    overflow-y: auto;
-}
-
-.ai-chat-input {
-    display: flex;
-    padding: 15px;
-    gap: 10px;
-    background: rgba(26, 26, 26, 0.95);
-}
-
-.ai-chat-input input {
-    flex-grow: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.ai-chat-input button {
-    background: #64C80D;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.ai-chat-input button i {
-    color: white;
-    font-size: 20px;
-}
-
-.ai-chat-input button:hover {
-    background: #569F0A;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
 
 /* Responsive */
 @media screen and (max-width: 768px) {
@@ -894,5 +816,105 @@ footer {
 
     .dinero p {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-lateral {
+        display: none;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .partidos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .card-partidos {
+        width: 100%;
+        height: 160px;
+        padding: 10px;
+        margin: 5px;
+        box-sizing: border-box;
+    }
+
+    .horario {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .horario img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .equipo1, .equipo2 {
+        padding: 3px 8px;
+        font-size: 12px;
+        margin: 3px 0;
+    }
+
+    .equipo1 img, .equipo2 img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .importe {
+        margin: 8px 0;
+        font-size: 12px;
+        padding-left: 8px;
+    }
+
+    .apostar {
+        display: none;
+    }
+
+    .contenido h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partidos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 5px;
+    }
+
+    .card-partidos {
+        height: 140px;
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .horario {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+
+    .horario img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .equipo1, .equipo2 {
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+
+    .equipo1 img, .equipo2 img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .importe {
+        margin: 6px 0;
+        font-size: 11px;
+        padding-left: 6px;
     }
 }
