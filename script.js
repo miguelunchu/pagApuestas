@@ -116,4 +116,44 @@ document.addEventListener("DOMContentLoaded", function() {
             desafios.classList.add('loaded');
         }, 300);
     }
+
+    // AI Assistant - Solo manejo de la interfaz
+    const aiToggle = document.querySelector('.ai-toggle');
+    const aiContainer = document.querySelector('.ai-chat-container');
+    const aiClose = document.querySelector('.ai-close');
+    const aiInput = document.querySelector('.ai-chat-input input');
+    const aiSend = document.querySelector('.ai-send');
+    const aiMic = document.querySelector('.ai-mic');
+
+    if (aiToggle && aiContainer && aiClose) {
+        // Abrir chat
+        aiToggle.addEventListener('click', () => {
+            aiContainer.classList.add('active');
+        });
+
+        // Cerrar chat
+        aiClose.addEventListener('click', () => {
+            aiContainer.classList.remove('active');
+        });
+
+        // Limpiar input al enviar
+        aiSend.addEventListener('click', () => {
+            aiInput.value = '';
+        });
+
+        // Limpiar input al presionar Enter
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                aiInput.value = '';
+            }
+        });
+
+        // Efecto visual al hacer click en el micrófono
+        aiMic.addEventListener('click', () => {
+            aiMic.classList.add('active');
+            setTimeout(() => {
+                aiMic.classList.remove('active');
+            }, 200);
+        });
+    }
 }); 

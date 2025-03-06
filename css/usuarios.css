@@ -56,7 +56,8 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-secundario);
-    padding: var(--padding-general);
+    padding: 10px;
+    position: relative;
 }
 
 .logo img {
@@ -81,50 +82,61 @@ header {
     padding: var(--padding-general);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 20px;
+}
+
 .perfil-usuario {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: var(--perfil-usuario-width);
-    height: var(--perfil-usuario-height);
+    width: auto;
+    height: auto;
     background: var(--color-secundario);
-    border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--color-primario);
     color: var(--color-texto);
-    font-family: var(--font-family-secondary);
-    margin-right: 30px;
+    padding-left: 15px;
     cursor: pointer;
 }
 
 .usuario {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    font-size: var(--font-size-normal);
-    font-weight: var(--font-weight-bold);
-    margin-top: 10px;
-    margin-left: 10px;
+    gap: 8px;
+    margin: 0;
 }
 
 .usuario img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+}
+
+.usuario p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .dinero {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: var(--font-size-normal);
-    margin-top: -15px;
-    margin-left: 16px;
-    color: var(--color-dinero);
+    gap: 5px;
+    margin: 5px 0 0 0;
 }
 
 .dinero img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+}
+
+.dinero p {
+    margin: 0;
+    font-size: 14px;
+    color: #FFD700;
 }
 
 /* Menú lateral */
@@ -433,6 +445,58 @@ footer {
     color: var(--color-primario);
 }
 
+/* Estilos para el asistente AI */
+.ai-assistant {
+    position: relative;
+}
+
+.ai-toggle {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.ai-toggle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ai-toggle:hover img {
+    transform: scale(1.1);
+}
+
+.ai-chat-container {
+    position: absolute;
+    top: 70px;
+    right: -150px;
+    width: 350px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+/* ... resto de estilos del chat ... */
+
+/* Responsive */
 @media screen and (max-width: 768px) {
     /* Ajuste del grid container */
     .container {
@@ -493,19 +557,24 @@ footer {
         flex-direction: column;
         align-items: flex-end;
         gap: 0;
+        padding-left: 10px;
     }
 
     .usuario {
         margin: 0;
-        font-size: 11px;
+        font-size: 12px;
         display: flex;
         align-items: center;
         gap: 3px;
     }
 
     .usuario img {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .usuario p {
+        font-size: 12px;
     }
 
     .dinero {
@@ -517,8 +586,12 @@ footer {
     }
 
     .dinero img {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .dinero p {
+        font-size: 12px;
     }
 
     /* Menú superior */
@@ -654,6 +727,11 @@ footer {
 
     .footer-links ul li {
         padding: 5px 0;
+    }
+
+    .header-actions {
+        gap: 10px;
+        margin-right: 10px;
     }
 }
 

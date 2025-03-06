@@ -64,10 +64,16 @@ header {
     padding: var(--padding-general);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+}
+
 form {
     display: flex;
     gap: var(--padding-general);
-    margin-right: 20px;
 }
 
 form input {
@@ -474,6 +480,20 @@ footer {
     .footer-links ul li {
         padding: 5px 0;
     }
+
+    .header-actions {
+        gap: 10px;
+        margin-right: 10px;
+    }
+    
+    .ai-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .ai-toggle i {
+        font-size: 20px;
+    }
 }
 
 /* Media query para pantallas muy pequeñas */
@@ -489,4 +509,189 @@ footer {
     .footer-logo img {
         width: 100px;
     }
+}
+
+/* Estilos para el asistente AI */
+.ai-assistant {
+    position: relative;
+}
+
+.ai-toggle {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 0;
+}
+
+.ai-toggle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ai-toggle:hover img {
+    transform: scale(1.1);
+}
+
+.ai-toggle i {
+    display: none;
+}
+
+.ai-chat-container {
+    position: absolute;
+    top: 70px;
+    right: -20px;
+    width: 350px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease;
+}
+
+.ai-chat-container.active {
+    transform: scale(1);
+}
+
+.ai-chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #1a1a1a, #000000);
+    border-bottom: 2px solid #64C80D;
+}
+
+.ai-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.ai-ball {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #64C80D, #366A08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+.ai-ball-inner {
+    width: 60%;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.ai-chat-header h3 {
+    color: white;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.ai-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.ai-chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.ai-chat-input {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    background: rgba(26, 26, 26, 0.95);
+}
+
+.ai-chat-input input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.ai-chat-input button {
+    background: #64C80D;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ai-chat-input button i {
+    color: white;
+    font-size: 20px;
+}
+
+.ai-chat-input button:hover {
+    background: #569F0A;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para los mensajes */
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.ai {
+    flex-direction: row;
+}
+
+.message.user {
+    flex-direction: row-reverse;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    color: white;
+}
+
+.message.ai .message-content {
+    background: rgba(100, 200, 13, 0.2);
+    margin-left: 10px;
+}
+
+.message.user .message-content {
+    background: rgba(100, 200, 13, 0.4);
+    margin-right: 10px;
 } 

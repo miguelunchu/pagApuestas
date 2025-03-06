@@ -21,10 +21,45 @@
                     <li><a href="./rankings.html">Rankings</a></li>
                 </ul>
             </nav>
-            <form action="#">
-                <input class="iniciar-sesion" type="button" value="Iniciar Sesión">
-                <input class="registrarse" type="button" value="Registrarse">
-            </form>
+            <div class="header-actions">
+                <div class="ai-assistant">
+                    <button class="ai-toggle">
+                        <img src="./img/fotoia.png" alt="AI Assistant">
+                    </button>
+                    
+                    <div class="ai-chat-container">
+                        <div class="ai-chat-header">
+                            <div class="ai-avatar">
+                                <div class="ai-ball">
+                                    <div class="ai-ball-inner"></div>
+                                </div>
+                            </div>
+                            <h3>BetBot Assistant</h3>
+                            <button class="ai-close">
+                                <i class='bx bx-x'></i>
+                            </button>
+                        </div>
+                        
+                        <div class="ai-chat-messages">
+                            <!-- Los mensajes se añadirán dinámicamente -->
+                        </div>
+                        
+                        <div class="ai-chat-input">
+                            <input type="text" placeholder="Pregúntame sobre apuestas...">
+                            <button class="ai-send">
+                                <i class='bx bx-send'></i>
+                            </button>
+                            <button class="ai-mic">
+                                <i class='bx bx-microphone'></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <form action="#">
+                    <input class="iniciar-sesion" type="button" value="Iniciar Sesión">
+                    <input class="registrarse" type="button" value="Registrarse">
+                </form>
+            </div>
         </header>
 
         <nav class="menu-lateral">
