@@ -44,6 +44,20 @@ Este proyecto es una página web interactiva de apuestas. A continuación se exp
 - **Apartado del Usuario y saldo**
   Al pulsar te mandara al apartado mi perfil
 
+## Animaciones
+- **Tarjetas y botones**
+Todas las tarjetas y botones tienen una animacion de hover donde se suben un poco y cammbia el fondo
+- **Boton Registrarse**
+Tiene una animacion de shake al pulsarlo
+- **Menu lateral**
+Al pasar el raton por encima de futbol se mostrara un despregable con una animacion
+- **Menu ia**
+  Se abrira el menu de ia con una animacion
+- **Carga pagina apuestas y usuarios**
+  Al cargarlas se mostrara una animacion
+  
+
+
 Enlace a Figma:https://www.figma.com/design/vnj80UrZIN8dmj9THabCSH/pagina-de-Apuestas?node-id=0-1&t=NOF5oRcfdUtL2PS2-1
 
 ## Conclusión
