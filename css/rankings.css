@@ -319,20 +319,21 @@ header {
     padding: 10px;
     border-radius: 10px;
     width: 240px; /* Controla el tamaño de las tarjetas */
-    transition: all 0.3s ease-in-out;
     box-sizing: border-box;
     font-size: 14px;
     margin-right: 40px;
     color: var(--color-texto);
     font-weight: bold;
-    opacity: 0;
     transform: translateY(30px);
-    transition: all 0.5s ease-out;
+}
+.desafios.loaded .card-desafios {
+    transform: translateY(0);
 }
 .card-desafios:hover {
+    transform: translateY(-5px) !important;
     background: linear-gradient(to bottom, #111111 54%, #448A10 100%);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 .card-desafios img {
     width: 75px;
@@ -682,7 +683,6 @@ footer {
 
 /* Animación cuando las tarjetas están cargadas */
 .desafios.loaded .card-desafios {
-    opacity: 1;
     transform: translateY(0);
 }
 

@@ -312,12 +312,16 @@ header {
     padding: var(--amigos-card-padding);
     border-radius: var(--amigos-card-radius);
     width: var(--amigos-card-width);
-    transition: background-color 0.3s;
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
     box-sizing: border-box;
 }
 
 .amigos-card:hover {
-    background-color: var(--amigos-card-hover-bg);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-out, background 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .amigos-card img {
