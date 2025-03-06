@@ -139,6 +139,21 @@ header {
     font-weight: bold;
 }
 
+/* Añadir estos estilos para el submenu */
+.submenu {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-lateral ul li:hover .submenu {
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s;
+}
+
 .submenu li {
     display: flex;
     align-items: center;
@@ -155,6 +170,20 @@ header {
     border-radius: 3px;
 }
 
+/* Delays escalonados */
+.menu-lateral ul li:hover .submenu li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-lateral ul li:hover .submenu li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-lateral ul li:hover .submenu li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* Animación de entrada para el contenido */
 .contenido {
     grid-area: contenido;
     padding: 20px;
@@ -165,14 +194,22 @@ header {
     margin-left: 75px;
     margin-top: -20px;
     border-radius: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
 }
 
-/* Título */
+.contenido.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .contenido h1 {
     font-size: 44px;
     font-weight: bold;
     text-align: center;
 }
+
 .tabla-div {
     display: flex;
     align-items: flex-start;
@@ -185,7 +222,6 @@ header {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
-    
 }
 
 .ranking-select select {
@@ -283,13 +319,15 @@ header {
     padding: 10px;
     border-radius: 10px;
     width: 240px; /* Controla el tamaño de las tarjetas */
-    transition: background-color 0.3s;
+    transition: all 0.3s ease-in-out;
     box-sizing: border-box;
     font-size: 14px;
     margin-right: 40px;
     color: var(--color-texto);
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
 }
 .card-desafios:hover {
     background: linear-gradient(to bottom, #111111 54%, #448A10 100%);
@@ -641,3 +679,15 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Animación cuando las tarjetas están cargadas */
+.desafios.loaded .card-desafios {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays escalonados para las tarjetas */
+.desafios.loaded .card-desafios:nth-child(1) { transition-delay: 0.2s; }
+.desafios.loaded .card-desafios:nth-child(2) { transition-delay: 0.3s; }
+.desafios.loaded .card-desafios:nth-child(3) { transition-delay: 0.4s; }
+.desafios.loaded .card-desafios:nth-child(4) { transition-delay: 0.5s; }

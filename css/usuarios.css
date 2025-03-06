@@ -160,6 +160,22 @@ header {
     font-weight: var(--font-weight-bold);
 }
 
+.submenu-amigos,
+.submenu-grupos {
+    max-height: none;
+    overflow: visible;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-lateral ul li:hover .submenu-amigos,
+.menu-lateral ul li:hover .submenu-grupos {
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s;
+}
+
 .submenu-amigos li,
 .submenu-grupos li {
     display: flex;
@@ -169,6 +185,29 @@ header {
     color: var(--color-texto);
     font-size: var(--font-size-normal);
     padding: 5px 0;
+}
+
+.menu-lateral ul li:hover .submenu-amigos li,
+.menu-lateral ul li:hover .submenu-grupos li {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Delays escalonados */
+.menu-lateral ul li:hover .submenu-amigos li:nth-child(1),
+.menu-lateral ul li:hover .submenu-grupos li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-lateral ul li:hover .submenu-amigos li:nth-child(2),
+.menu-lateral ul li:hover .submenu-grupos li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-lateral ul li:hover .submenu-amigos li:nth-child(3),
+.menu-lateral ul li:hover .submenu-grupos li:nth-child(3) {
+    transition-delay: 0.3s;
 }
 
 .perfil {
@@ -528,12 +567,6 @@ footer {
     .menu-lateral ul li a,
     .menu-lateral ul li p {
         font-size: 14px;
-    }
-
-    .submenu-amigos li,
-    .submenu-grupos li {
-        margin-left: 15px;
-        font-size: 12px;
     }
 
     .perfil {

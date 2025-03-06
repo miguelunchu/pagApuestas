@@ -136,14 +136,44 @@ header {
     font-weight: bold;
 }
 
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu-lateral ul li:hover .submenu {
+    max-height: 200px; /* Altura máxima del submenu desplegado */
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.3s ease-in, opacity 0.3s ease-in, visibility 0.3s;
+}
+
 .submenu li {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: 20px;
-    color: var(--color-texto);
-    font-size: 14px;
-    padding: 5px 0;
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-out;
+    opacity: 0;
+}
+
+.menu-lateral ul li:hover .submenu li {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Añadir delays escalonados para cada elemento del submenu */
+.menu-lateral ul li:hover .submenu li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-lateral ul li:hover .submenu li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-lateral ul li:hover .submenu li:nth-child(3) {
+    transition-delay: 0.3s;
 }
 
 .submenu li img {
@@ -174,6 +204,9 @@ header {
     font-size: 44px;
     font-weight: bold;
     color: var(--color-texto);
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
 }
 .partidos {
     display: flex;
@@ -220,6 +253,11 @@ header {
     width: 240px; 
     height: 175px;  
     transition: all 0.3s ease-in-out;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+    animation: slideFromBottom 0.8s ease-out;
+    animation-fill-mode: both;
 }
 
 .card-partidos:hover {
@@ -228,6 +266,36 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Clase para activar la animación */
+.contenido.loaded h1 {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.contenido.loaded .card-partidos {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Delays para las tarjetas */
+.contenido.loaded .card-partidos:nth-child(1) { transition-delay: 0.1s; }
+.contenido.loaded .card-partidos:nth-child(2) { transition-delay: 0.2s; }
+.contenido.loaded .card-partidos:nth-child(3) { transition-delay: 0.3s; }
+.contenido.loaded .card-partidos:nth-child(4) { transition-delay: 0.4s; }
+.contenido.loaded .card-partidos:nth-child(5) { transition-delay: 0.5s; }
+.contenido.loaded .card-partidos:nth-child(6) { transition-delay: 0.6s; }
+.contenido.loaded .card-partidos:nth-child(7) { transition-delay: 0.7s; }
+.contenido.loaded .card-partidos:nth-child(8) { transition-delay: 0.8s; }
+.contenido.loaded .card-partidos:nth-child(9) { transition-delay: 0.9s; }
+.contenido.loaded .card-partidos:nth-child(10) { transition-delay: 1s; }
+
+/* Opcional: Deshabilitar animaciones si el usuario prefiere reducir el movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .contenido h1,
+    .card-partidos {
+        animation: none;
+    }
+}
 
 .horario{
     display: flex;
@@ -612,5 +680,28 @@ footer {
     .card-partidos {
         width: 100%;
         margin: 10px 0;
+    }
+}
+
+/* Añadir las animaciones slide-in */
+@keyframes slideFromBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
