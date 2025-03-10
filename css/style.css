@@ -64,6 +64,21 @@ header {
     font-weight: bold;
     padding: var(--padding-general);
 }
+.menu ul li a:hover {
+    color: var(--color-primario);
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--color-primario);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
 
 .header-actions {
     display: flex;

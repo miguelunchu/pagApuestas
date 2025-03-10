@@ -68,6 +68,37 @@ header {
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu ul li a:hover {
+    color: var(--color-primario);
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--color-primario);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu ul li a:hover::after {
+    width: 70%;
+}
+
+/* Estilo para el logo con hover */
+.logo a {
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
 }
 
 .perfil-usuario {
@@ -82,8 +113,13 @@ header {
     color: var(--color-texto);
     font-family: Arial, sans-serif;
     margin-right: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.perfil-usuario:hover {
+    background-color: #111;
+}
 
 .usuario {
     display: flex;
