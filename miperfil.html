@@ -1,76 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi Perfil - Apuestas Interactivas</title>
+    <meta name="description" content="Gestiona tu perfil y consulta tus estadísticas en Apuestas Interactivas">
     <link rel="stylesheet" href="./css/miperfil.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo"><a href="./index.html"><img src="./img/image__1_-removebg-preview.png" alt="Logo"></a></div>
-            <nav class="menu">
+            <div class="logo">
+                <a href="./index.html" title="Ir a la página principal">
+                    <img src="./img/image__1_-removebg-preview.png" alt="Logo de Apuestas Interactivas" width="140" height="auto">
+                </a>
+            </div>
+            <nav class="menu" aria-label="Menú principal">
                 <ul>
-                    <li><a href="./usuarios.html">Usuarios</a></li>
-                    <li><a href="./apuesta.html">Apuestas</a></li>
-                    <li><a href="./rankings.html">Rankings</a></li>
+                    <li><a href="./usuarios.html" title="Ver listado de usuarios">Usuarios</a></li>
+                    <li><a href="./apuesta.html" title="Explorar apuestas disponibles">Apuestas</a></li>
+                    <li><a href="./rankings.html" title="Ver clasificación de usuarios">Rankings</a></li>
                 </ul>
             </nav>
-           <div class="perfil-usuario">
-            <div class="usuario">
-            <img src="./img/usuarioImg.png" alt="">
-            <p>miguelunchu</p>
-        </div>
-        <div class="dinero">
-            <img src="./img/image-removebg-preview (5).png" alt="">
-            <p>100.00 €</p>
-        </div>
-        </div>
+            <div class="perfil-usuario" title="Tu perfil de usuario">
+                <div class="usuario">
+                    <img src="./img/usuarioImg.png" alt="Foto de perfil del usuario" width="35" height="35">
+                    <p>miguelunchu</p>
+                </div>
+                <div class="dinero" title="Tu saldo disponible">
+                    <img src="./img/image-removebg-preview (5).png" alt="Icono de moneda" width="20" height="20">
+                    <p>100.00 €</p>
+                </div>
+            </div>
         </header>
 
         <main class="contenido">
-            <div class="perfil-card">
+            <section class="perfil-card" aria-label="Información de perfil">
                 <div class="perfil">
-                    <img src="./img/usuarioImg.png" alt="">
-                    <p>miguelunchu</p>
-                    <a href="#">@miguelunchu</a>
+                    <img src="./img/usuarioImg.png" alt="Foto de perfil del usuario" width="100" height="100">
+                    <h1>miguelunchu</h1>
+                    <a href="#" title="Ver perfil público">@miguelunchu</a>
                 </div>
-                <div class="datos">
-                    <p><span>Seguidores</span> <br> 1025</p>
-                    <p><span>Porcentaje de victoria</span> <br> 50%</p>
-                    <p><span>Correo</span> <br>mi******@gmail.com</p>
-                    <p><span>Telefono</span> <br>618****68</p>
-                    <p><span>Apuestas activas</span> <br> 10</p>
-                    <p><span>Apuestas ganadas</span> <br> 5</p>
-                </div>
-            </div>
+                <dl class="datos">
+                    <div title="Número de seguidores">
+                        <dt>Seguidores</dt>
+                        <dd>1025</dd>
+                    </div>
+                    <div title="Porcentaje de victorias en apuestas">
+                        <dt>Porcentaje de victoria</dt>
+                        <dd>50%</dd>
+                    </div>
+                    <div title="Correo electrónico">
+                        <dt>Correo</dt>
+                        <dd>mi******@gmail.com</dd>
+                    </div>
+                    <div title="Número de teléfono">
+                        <dt>Teléfono</dt>
+                        <dd>618****68</dd>
+                    </div>
+                    <div title="Apuestas activas actualmente">
+                        <dt>Apuestas activas</dt>
+                        <dd>10</dd>
+                    </div>
+                    <div title="Total de apuestas ganadas">
+                        <dt>Apuestas ganadas</dt>
+                        <dd>5</dd>
+                    </div>
+                </dl>
+            </section>
         </main>
         <footer>
-            <div class="footer-logo"><img src="./img/image__1_-removebg-preview.png" alt="">
+            <div class="footer-logo">
+                <img src="./img/image__1_-removebg-preview.png" alt="Logo de Apuestas Interactivas" width="150" height="auto">
                 <p>&copy; 2025 Apuestas Interactivas</p>
             </div>
-            <div class="social-icons" >
-    
+            <div class="social-icons">
                 <a href="#">
                     <i class='bx bxl-github'></i>
                 </a>
-        
                 <a href="#">
                     <i class='bx bxl-linkedin-square'></i>
                 </a>
-        
                 <a href="#">
                     <i class='bx bxl-instagram'></i>
                 </a>
-        
                 <a href="#">
                     <i class='bx bxl-twitter'></i>
                 </a>
-        
             </div>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Enlaces legales">
                 <ul>
                     <li>
                         Privacy Policy
@@ -85,9 +104,10 @@
                         Legal
                     </li>
                 </ul>
-            </div>
-            
+            </nav>
         </footer>
+        
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

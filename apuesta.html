@@ -11,39 +11,41 @@
 <body>
     <div class="main-container">
         <header>
-            <div class="menu-toggle">
-                <i class='bx bx-menu'></i>
+            <div class="menu-toggle" title="Abrir menú lateral">
+                <i class='bx bx-menu' aria-hidden="true"></i>
             </div>
             <div class="logo">
-                <a href="./index.html"><img src="./img/image__1_-removebg-preview.png" alt="Logo"></a>
+                <a href="./index.html" title="Ir a la página principal">
+                    <img src="./img/image__1_-removebg-preview.png" alt="Logo de Apuestas Interactivas" width="140" height="auto">
+                </a>
             </div>
-            <nav class="menu">
+            <nav class="menu" aria-label="Menú principal">
                 <ul>
-                    <li><a href="./usuarios.html">Usuarios</a></li>
-                    <li><a href="./apuesta.html">Apuestas</a></li>
-                    <li><a href="./rankings.html">Rankings</a></li>
+                    <li><a href="./usuarios.html" title="Ver listado de usuarios">Usuarios</a></li>
+                    <li><a href="./apuesta.html" title="Explorar apuestas disponibles">Apuestas</a></li>
+                    <li><a href="./rankings.html" title="Ver clasificación de usuarios">Rankings</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <div class="relative">
-                    <button id="chat-toggle" class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity">
-                        <img src="./img/fotoia.png" alt="AI Assistant" class="w-full h-full object-cover">
+                    <button id="chat-toggle" class="w-10 h-10 rounded-full overflow-hidden hover:opacity-80 transition-opacity" title="Abrir chat con asistente virtual">
+                        <img src="./img/fotoia.png" alt="Asistente virtual IA" class="w-full h-full object-cover">
                     </button>
                     
                     <div id="chat-container" class="absolute right-0 mt-2 w-96 bg-gray-900 rounded-lg shadow-xl border border-gray-700 z-50 hidden">
                         <!-- Header del Chat -->
                         <div class="flex items-center p-4 border-b border-gray-700">
                             <div class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-800">
-                                <div class="w-6 h-6 rounded-full bg-green-500 animate-pulse"></div>
+                                <div class="w-6 h-6 rounded-full bg-green-500 animate-pulse" aria-hidden="true"></div>
                             </div>
                             <h3 class="ml-3 text-lg font-semibold text-white">Asistente</h3>
-                            <button id="chat-close" class="ml-auto text-gray-400 hover:text-white">
-                                <i class='bx bx-x text-2xl'></i>
+                            <button id="chat-close" class="ml-auto text-gray-400 hover:text-white" title="Cerrar chat">
+                                <i class='bx bx-x text-2xl' aria-hidden="true"></i>
                             </button>
                         </div>
                         
                         <!-- Mensajes -->
-                        <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-900">
+                        <div id="chat-messages" class="p-4 h-64 overflow-y-auto bg-gray-900" aria-live="polite">
                             <p class="bg-gray-800 rounded-lg p-3 text-gray-200">Hola, ¿cómo puedo ayudarte hoy?</p>
                         </div>
                         
@@ -53,43 +55,47 @@
                                 <input type="text" 
                                        id="chat-input"
                                        placeholder="Pregúntame sobre apuestas..." 
+                                       aria-label="Escribe tu mensaje"
                                        class="flex-1 px-4 py-2 h-9 rounded-full bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-green-500">
-                                <button id="send-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors">
-                                    <i class='bx bx-send text-base'></i>
+                                <button id="send-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors" title="Enviar mensaje">
+                                    <i class='bx bx-send text-base' aria-hidden="true"></i>
                                 </button>
-                                <button id="voice-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors">
-                                    <i class='bx bx-microphone text-base'></i>
+                                <button id="voice-message" class="text-white bg-green-600 hover:bg-green-500 rounded-full min-w-[36px] min-h-[36px] w-9 h-9 flex items-center justify-center transition-colors" title="Enviar mensaje de voz">
+                                    <i class='bx bx-microphone text-base' aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="perfil-usuario">
+                <div class="perfil-usuario" title="Tu perfil de usuario">
                     <div class="usuario">
-                        <img src="./img/usuarioImg.png" alt="">
+                        <img src="./img/usuarioImg.png" alt="Foto de perfil del usuario" width="35" height="35">
                         <p>miguelunchu</p>
                     </div>
-                    <div class="dinero">
-                        <img src="./img/image-removebg-preview (5).png" alt="">
+                    <div class="dinero" title="Tu saldo disponible">
+                        <img src="./img/image-removebg-preview (5).png" alt="Icono de moneda" width="20" height="20">
                         <p>100.00 €</p>
                     </div>
                 </div>
             </div>
         </header>
 
-        <nav class="menu-lateral">
-            <ul>
-                <li><a href="#">⚽ Fútbol</a>
-                <ul class="submenu">
-                    <li><img src="./img/icons8-emoji-inglaterra-48.png" alt="">Liga Inglesa</li>
-                    <li><img src="./img/icons8-emoji-españa-48.png" alt="">Liga Española</li>
-                    <li><img src="./img/icons8-italia-emoji-48.png" alt="">Liga Italiana</li>
-                </ul></li>
-                <li><a href="#">🏀 Baloncesto</a></li>
-                <li><a href="#">🎾 Tenis</a></li>
-            </ul>
-        </nav>
-
+        <aside class="menu-lateral">
+            <nav aria-label="Categorías deportivas">
+                <ul>
+                    <li>
+                        <a href="#" title="Ver apuestas de fútbol">⚽ Fútbol</a>
+                        <ul class="submenu">
+                            <li><img src="./img/icons8-emoji-inglaterra-48.png" alt="Bandera de Inglaterra" width="20" height="15">Liga Inglesa</li>
+                            <li><img src="./img/icons8-emoji-españa-48.png" alt="Bandera de España" width="20" height="15">Liga Española</li>
+                            <li><img src="./img/icons8-italia-emoji-48.png" alt="Bandera de Italia" width="20" height="15">Liga Italiana</li>
+                        </ul>
+                    </li>
+                    <li><a href="#" title="Ver apuestas de baloncesto">🏀 Baloncesto</a></li>
+                    <li><a href="#" title="Ver apuestas de tenis">🎾 Tenis</a></li>
+                </ul>
+            </nav>
+        </aside>
         <main class="contenido">
             <h1>Partidos destacados</h1>
             <div class="partidos">
@@ -109,9 +115,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -130,9 +136,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -151,9 +157,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -172,9 +178,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -193,9 +199,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -214,9 +220,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -235,9 +241,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -256,9 +262,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -277,9 +283,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -298,9 +304,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -319,9 +325,29 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
+                </div>
+                </div>
+                <div class="card-partidos">
+                    <div class="horario">
+                    <img src="./img/icons8-reloj-24 (1).png" alt=""><p>Hoy 21:00</p>
+                </div>
+                <div class="equipo1">
+                    <img src="./img/Captura_de_pantalla_2025-02-03_160655-removebg-preview.png" alt="">
+                    <p>Manchester City</p>
+                </div>
+                <div class="equipo2">
+                    <img src="./img/image-removebg-preview (1).png" alt="">
+                    <p>Liverpool</p>
+                </div>
+                <div class="importe"><p>Importe 10€</p></div>
+                <div class="apostar">
+                    <form action="#">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
+                    </form>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -340,9 +366,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -361,9 +387,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -382,9 +408,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -403,9 +429,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -424,9 +450,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -445,9 +471,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -466,9 +492,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -487,9 +513,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -508,9 +534,9 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
                 </div>
                 <div class="card-partidos">
@@ -529,77 +555,57 @@
                 
                 <div class="apostar">
                     <form action="#">
-                        <input type="button" value="Hacer Apuesta">
+                        <input type="button" value="Hacer Apuesta" title="Hacer apuesta">
                     </form>
-                    <a href="#">+</a>
+                    <a href="#" title="Hacer combinada"title="Añadir apuesta">+</a>
                 </div>
-                </div>
-                <div class="card-partidos">
-                    <div class="horario">
-                    <img src="./img/icons8-reloj-24 (1).png" alt=""><p>Hoy 21:00</p>
-                </div>
-                <div class="equipo1">
-                    <img src="./img/Captura_de_pantalla_2025-02-03_160655-removebg-preview.png" alt="">
-                    <p>Manchester City</p>
-                </div>
-                <div class="equipo2">
-                    <img src="./img/image-removebg-preview (1).png" alt="">
-                    <p>Liverpool</p>
-                </div>
-                <div class="importe"><p>Importe 10€</p></div>
-                
-                <div class="apostar">
-                    <form action="#">
-                        <input type="button" value="Hacer Apuesta">
-                    </form>
-                    <a href="#">+</a>
-                </div>
+
                 </div>
 
                 </div>
         </main>
         <footer>
-            <div class="footer-logo"><img src="./img/image__1_-removebg-preview.png" alt="">
+            <div class="footer-logo">
+                <img src="./img/image__1_-removebg-preview.png" alt="Logo de Apuestas Interactivas" width="150" height="auto">
                 <p>&copy; 2025 Apuestas Interactivas</p>
             </div>
-            <div class="social-icons" >
-    
-                <a href="#">
-                    <i class='bx bxl-github'></i>
+            <div class="social-icons">
+                <a href="#" title="Visita nuestro GitHub">
+                    <i class='bx bxl-github' aria-hidden="true"></i>
+                    <span class="sr-only">GitHub</span>
                 </a>
-        
-                <a href="#">
-                    <i class='bx bxl-linkedin-square'></i>
+                <a href="#" title="Conéctate en LinkedIn">
+                    <i class='bx bxl-linkedin-square' aria-hidden="true"></i>
+                    <span class="sr-only">LinkedIn</span>
                 </a>
-        
-                <a href="#">
-                    <i class='bx bxl-instagram'></i>
+                <a href="#" title="Síguenos en Instagram">
+                    <i class='bx bxl-instagram' aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
                 </a>
-        
-                <a href="#">
-                    <i class='bx bxl-twitter'></i>
+                <a href="#" title="Síguenos en Twitter">
+                    <i class='bx bxl-twitter' aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
                 </a>
-        
             </div>
-            <div class="footer-links">
+            <nav class="footer-links" aria-label="Enlaces legales">
                 <ul>
                     <li>
-                        Privacy Policy
+                        <a href="#" title="Consulta nuestra política de privacidad">Privacy Policy</a>
                     </li>
                     <li>
-                        Terms of Use
+                        <a href="#" title="Consulta nuestros términos de uso">Terms of Use</a>
                     </li>
                     <li>
-                        Sales and Refunds
+                        <a href="#" title="Información sobre ventas y reembolsos">Sales and Refunds</a>
                     </li>
                     <li>
-                        Legal
+                        <a href="#" title="Información legal">Legal</a>
                     </li>
                 </ul>
-            </div>
-            
+            </nav>
         </footer>
     </div>
     <script src="script.js"></script>
 </body>
+</html>
 </html>

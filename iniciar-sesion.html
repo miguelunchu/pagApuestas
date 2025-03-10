@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar Sesión - Apuestas Interactivas</title>
+    <meta name="description" content="Accede a tu cuenta de Apuestas Interactivas para disfrutar de todas las funcionalidades">
     <link rel="stylesheet" href="css/iniciar-sesion.css">
-    
 </head>
 <body>
-    <div class="main-container">
-    <div class="login-container">
-        <img src="./img/image__1_-removebg-preview.png" alt="">
-        <h2>Login</h2>
-        <form action="#" method="POST">
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="username@gmail.com">
+    <main class="main-container">
+        <section class="login-container">
+            <img src="./img/image__1_-removebg-preview.png" alt="Logo de Apuestas Interactivas" width="175" height="150">
+            <h1>Login</h1>
+            <form action="#" method="POST" aria-labelledby="login-heading">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="username@gmail.com" aria-required="true" title="Introduce tu dirección de correo electrónico">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Password" aria-required="true" title="Introduce tu contraseña">
+                </div>
+                <div class="forgot-password">
+                    <a href="#" title="Recupera tu contraseña">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-button" title="Acceder a tu cuenta">Sign in</button>
+            </form>
+            <div class="register">
+                Don't have an account yet? <a href="registro.html" title="Crea una cuenta nueva">Register for free</a>
             </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Password">
-            </div>
-            <div class="forgot-password">
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="login-button">Sign in</button>
-        </form>
-        <div class="register">
-            Don't have an account yet? <a href="#">Register for free</a>
-        </div>
-    </div>
-</div>
-<script src="script.js"></script>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
 </body>
-</html>
-
 </html>

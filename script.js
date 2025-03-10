@@ -209,4 +209,48 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+    
+    // Código para tooltips personalizados
+    // Crear elemento para tooltip personalizado
+    const tooltip = document.createElement('div');
+    tooltip.className = 'custom-tooltip';
+    tooltip.style.position = 'absolute';
+    tooltip.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    tooltip.style.color = 'white';
+    tooltip.style.padding = '8px 12px';
+    tooltip.style.borderRadius = '6px';
+    tooltip.style.fontSize = '14px';
+    tooltip.style.zIndex = '1000';
+    tooltip.style.opacity = '0';
+    tooltip.style.transition = 'opacity 0.3s ease';
+    tooltip.style.pointerEvents = 'none';
+    document.body.appendChild(tooltip);
+
+    // Seleccionar elementos con title
+    const elementsWithTitle = document.querySelectorAll('[title]');
+    
+    elementsWithTitle.forEach(el => {
+        const title = el.getAttribute('title');
+        el.removeAttribute('title'); // Eliminar title nativo
+        el.dataset.tooltip = title; // Guardar en data attribute
+        
+        el.addEventListener('mouseenter', function(e) {
+            tooltip.textContent = this.dataset.tooltip;
+            tooltip.style.opacity = '1';
+            positionTooltip(e);
+        });
+        
+        el.addEventListener('mousemove', positionTooltip);
+        
+        el.addEventListener('mouseleave', function() {
+            tooltip.style.opacity = '0';
+        });
+    });
+    
+    function positionTooltip(e) {
+        const x = e.clientX + 10;
+        const y = e.clientY + 10;
+        tooltip.style.left = x + 'px';
+        tooltip.style.top = y + 'px';
+    }
 }); 
